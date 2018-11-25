@@ -1,0 +1,72 @@
+
+#1) Refactor the following conditional without using any boolean operators (note: this will increase the number of branches)
+# 5 marks
+
+a = input("please input y or n ")
+b = int(input("please input a whole number between 1 and 20 "))
+if a=="y":
+    if b>10:
+        print("yes")
+    else:
+        print("no")
+else:
+    print("no")
+
+
+
+#2) 
+
+a=input("please input y or n ")
+b=input("please input y or n ")
+c=input("please input y or n ")
+thisVariableChangesIfTheInputIsInvalid = "valid"
+
+
+if not (a== "y" and b == "n" and c== "n"):
+    thisVariableChangesIfTheInputIsInvalid = "not valid"
+print(thisVariableChangesIfTheInputIsInvalid)
+
+     
+#3)  
+
+##
+#   This program displays the correct Saffir-Simpson Hurricane Wind Scale category for wind speed entered by the user.
+#
+#
+
+inputValidation = ("Invalid input") #This variable is used if one of the inputs is invalid 
+
+milesOrKilometres = str(input("please enter either miles or kilometres ")) #The program asks for metrics 
+if milesOrKilometres == "miles" or milesOrKilometres == "kilometres": #The program checks if the metrics entered are valid 
+    speed = str(input("""please input speed (in whole numbers) """)) #The program asks the user to input speed
+    if speed.isdigit(): #The program checks if the data which has been entered are numbers 
+        speed = int(speed) #The speed variable is converted back to a integer            
+        if (milesOrKilometres == "miles" and speed >= 157) or (milesOrKilometres == "kilometres" and speed >= 252):
+#The above line defines what a Category 5 hurricane is and prints the line below if the input data fits this definition  
+            print ("Category 5 - Catastrophic damage will occur")
+        elif (milesOrKilometres == "miles" and speed >= 130 and speed <= 156 )or (milesOrKilometres == "kilometres" and speed >= 209 and speed <= 251):
+#The above line defines what a Category 4 hurricane is and prints the line below if the input data fits this definition 
+            print("Category 4 - Catastrophic damage will occur")
+        elif (milesOrKilometres == "miles" and speed >= 111 and speed <= 129) or (milesOrKilometres == "kilometres" and speed >= 178 and speed <= 208):
+#The above line defines what a Category 3 hurricane is and prints the line below if the input data fits this definition 
+            print("Category 3 - Devasting damage will occur")
+        elif (milesOrKilometres == "miles" and speed >= 96 and speed <= 110) or (milesOrKilometres == "kilometres" and speed >= 154 and speed <= 177):
+#The above line defines what a Category 2 hurricane is and prints the line below if the input data fits this definition 
+            print("Category 2 - Extremely dangerous winds will cause extensive damage")
+        elif (milesOrKilometres == "miles" and speed >= 74 and speed <= 95) or (milesOrKilometres == "kilometres" and speed >= 119 and speed <= 154):
+#The above line defines what a Category 1 hurricane is and prints the line below if the input data fits this definition 
+            print("Category 1 - Very dangerous winds will cause extensive damage")     
+        else:
+            print("Not a hurricane") #If the input data is valid but does but fit any of the above definitions it prints this line
+
+
+    else:
+            print(inputValidation)#If the speed data input is invalid "Invalid input" is printed 
+else:
+    print(inputValidation)#If the metrics data input is invalid "Invalid input" is printed 
+
+
+
+
+
+
